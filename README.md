@@ -28,3 +28,14 @@
 - `tests/scenes.test.cjs`：題目、場景及互動邏輯基本檢核。
 
 本地測試：`node --test tests/scenes.test.cjs`。本網站採 GitHub Pages 靜態託管，不需 API 或後端。
+
+## 17 張角色圖 ZIP 一鍵匯入
+
+未來完成角色立繪後，請將 17 張透明 PNG 依固定代碼命名：
+
+- 青青：`C01_G01.png` ～ `C01_G06.png`（6張）
+- 小芯：`C02_X01.png` ～ `C02_X04.png`（4張）
+- 大春：`C03_C01.png` ～ `C03_C04.png`（4張）
+- 護理師：`C04_N01.png` ～ `C04_N03.png`（3張）
+
+壓縮成 `characters.zip` 並上傳至儲存庫 `uploads/characters.zip`，即可觸發「匯入經彩青春國中角色圖片」Actions，自動驗證 PNG、解壓縮、替換圖像清單並重新部署。GitHub Pages 仍需先在 Settings → Pages 選取 GitHub Actions。
