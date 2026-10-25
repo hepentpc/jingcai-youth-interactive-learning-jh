@@ -12,13 +12,21 @@
   <script defer src="./data/character-poses.js?v=jh20261021v1"></script>
   <script defer src="./data/character-assets.js?v=a520467dd619"></script>
   <script defer src="./assets/app.js?v=jh20261021v1"></script>
+  <style>
+    /* 學制標示：維持原有圖標方塊尺寸，讓雙中文字完整置中。 */
+    .brand-symbol.grade-symbol{font-size:17px;font-weight:900;letter-spacing:0;white-space:nowrap;}
+    @media(max-width:650px){.brand-symbol.grade-symbol{font-size:13px;}}
+    /* 主題單行顯示，避免「青春心日記」在窄螢幕斷字。 */
+    .welcome-copy h1.grade-welcome-title{white-space:nowrap;font-size:clamp(36px,5.2vw,76px);}
+    @media(max-width:650px){.welcome-copy h1.grade-welcome-title{font-size:clamp(32px,8vw,52px);}}
+  </style>
 </head>
 <body>
 <div class="shell">
   <header class="topbar">
     <a class="brand" href="./" aria-label="經彩青春 SET 首頁">
-      <span class="brand-symbol" aria-hidden="true">✿</span>
-      <span><strong>經彩青春 <em>SET</em></strong><small>國中互動劇場・青春心日記</small></span>
+      <span class="brand-symbol grade-symbol" aria-hidden="true">國中</span>
+      <span><strong>經彩青春 <em>SET</em></strong><small>月經教育 × 概念形成</small></span>
     </a>
     <div class="top-meta">
       <span id="headerStars" class="meta-pill meta-stars" hidden>✦ <b id="starCount">0</b>／11</span>
@@ -29,8 +37,7 @@
   <main id="app">
     <section id="welcome" class="view welcome" aria-labelledby="welcomeTitle">
       <div class="welcome-copy">
-        <p class="eyebrow">月經教育 x 概念形成</p>
-        <h1 id="welcomeTitle">國中<span>青春心日記</span></h1>
+        <h1 id="welcomeTitle" class="grade-welcome-title">青春心日記</h1>
         <p class="intro">少男少女對於青春期到來充滿期待，也會有些疑惑，透過青春日記的反思，引領認識月經生理與保健、學習同理與關懷，以展現青春、健康的友善行動！</p>
         <div class="intro-stats"><span>📖 23 幕劇情</span><span>✦ 11 題互動挑戰</span><span>🏆 1 組通關密碼</span></div>
         <div class="howto"><h2>遊戲怎麼玩？</h2><p><b>01 看故事</b>　閱讀人物對話與情境說明</p><p><b>02 選答案</b>　A／B／C 三選一，答錯可以重試</p><p><b>03 學知識</b>　答對才能進入下一幕，解鎖徽章與通關密碼</p></div>
@@ -75,7 +82,7 @@
     <section id="finish" class="view finish" hidden aria-labelledby="finishTitle">
       <p class="eyebrow">✦ 11 題挑戰完成 ✦</p>
       <h1 id="finishTitle" tabindex="-1">恭喜你成功通關！</h1>
-      <p id="finishText" class="finish-lead"></p>
+      <p id="finishText" class="finish-lead" hidden></p>
       <div class="finish-cast" aria-label="四位故事夥伴">
         <div class="finish-slot"><span>角色圖片預留區</span><b>青青</b></div>
         <div class="finish-slot"><span>角色圖片預留區</span><b>小芯</b></div>
